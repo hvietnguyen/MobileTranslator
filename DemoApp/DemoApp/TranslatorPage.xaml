@@ -10,20 +10,20 @@
 
 
     <StackLayout BackgroundColor="White">
-        <Editor x:Name="RecordedText" Margin="5,5,5,5" HeightRequest="150" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
-                                BackgroundColor="White" Text="Original Language here" TextColor="Black" FontSize="Medium" FontFamily="Sans-Serif" />
+        <Editor x:Name="RecordedText" Margin="5,5,5,5" HeightRequest="100" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                                BackgroundColor="White" Text="" TextColor="Black" FontSize="Medium" FontFamily="Sans-Serif" />
 
         <TableView x:Name="Table" Intent="Form" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="True">
             <TableRoot Title="Translated Text">
                 <TableSection Title="Translated Text">
-                    <ImageCell  x:Name="TranslatedText" ImageSource="language.png" Tapped="TranslatedText_Tapped"/>
+                    <ImageCell  x:Name="TranslatedText" ImageSource="language.png" Tapped="TranslatedText_Tapped" />
                 </TableSection>
             </TableRoot>
         </TableView>
 
-        <Button x:Name="Play" Margin="5,5,5,5" Image="Play.png" HeightRequest="80" WidthRequest="80" BackgroundColor="White" 
+        <Button x:Name="Play" Margin="5,5,5,5" Image="Play.png" HeightRequest="60" WidthRequest="80" BackgroundColor="White" 
                                 HorizontalOptions="Center" Clicked="Play_Clicked" IsVisible="True" IsEnabled="True" />
-        <Button x:Name="Stop" Margin="5,5,5,5" Image="Stop.png" HeightRequest="80" WidthRequest="80" BackgroundColor="White"  
+        <Button x:Name="Stop" Margin="5,5,5,5" Image="Stop.png" HeightRequest="60" WidthRequest="80" BackgroundColor="White"  
                                 HorizontalOptions="Center" Clicked="Stop_Clicked" IsVisible="false" IsEnabled="false" />
     </StackLayout>
     

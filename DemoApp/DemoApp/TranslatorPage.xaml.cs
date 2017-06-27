@@ -123,15 +123,23 @@ namespace DemoApp
         /// <param name="e"></param>
         private async void TranslatedText_Tapped(object sender, EventArgs e)
         {
-            azureEasyTableClient.BaseAddress = @"http://mobiletranslator.azurewebsites.net/";
-            azureEasyTableClient.TargetAPI = @"tables/TranslatedText";
+            if(String.IsNullOrEmpty(RecordedText.Text) || String.IsNullOrEmpty(TranslatedText.Text) 
+                || String.IsNullOrEmpty(TranslatedText.Detail))
+            {
+                return;
+            }
+
             TranslationModel model = new TranslationModel()
             {
                 Text=RecordedText.Text,
                 TranslatedText = TranslatedText.Text,
                 Pronunciation = TranslatedText.Detail
             };
+
+            azureEasyTableClient.BaseAddress = @"http://mobiletranslator.azurewebsites.net/";
+            azureEasyTableClient.TargetAPI = @"tables/TranslatedText";
             bool result = await azureEasyTableClient.PostDataAsync(model);
+
             if(result)
             {
                 await DisplayAlert("Message", "Save data successful", "OK");

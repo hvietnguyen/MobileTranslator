@@ -16,12 +16,25 @@ namespace DemoApp
     {
         IAzureEasyTableClient azureEasyTableClient = null;
         List<TranslationModel> models = null;
-        
+
+        bool isRefreshing = false;
+        public bool IsRefreshing
+        {
+            get
+            {
+                return isRefreshing;
+            }
+            set
+            {
+                isRefreshing = value;
+            }
+        }
+
         public SentencesPage()
         {
             InitializeComponent();
             azureEasyTableClient = DependencyService.Get<IAzureEasyTableClient>();
-            listView.IsRefreshing = false;
+            listView.SetBinding(ListView.IsRefreshingProperty, "IsRefreshing");
             models = new List<TranslationModel>();
             //var translationViewListModel = new TranslationViewList();
             //BindingContext = translationViewListModel;
@@ -29,10 +42,15 @@ namespace DemoApp
 
         private void ListViewData(List<TranslationModel> models)
         {
-            if (models == null || models.Count <= 0) return;
+            DataTemplate dataTemplate = null;
+            if (models == null || models.Count <= 0)
+            {
+                DisplayAlert("Message", "No Data", "Ok");
+                return;
+            }
 
             listView.ItemsSource = models;
-            DataTemplate dataTemplate = new DataTemplate(() =>
+            dataTemplate = new DataTemplate(() =>
             {
                 Label recordedText = new Label();
                 recordedText.FontSize = 14;
@@ -71,7 +89,6 @@ namespace DemoApp
                                     pronunciation
                                 }
                             }
-
                         }
                     }
                 };
@@ -85,16 +102,20 @@ namespace DemoApp
                     listView
                 }
             };
-
-            listView.EndRefresh();
         }
 
+        /// <summary>
+        /// Get Data from Easy Table in MS Azure service
+        /// </summary>
+        /// <param name="models">List of TranslationModel to hold data</param>
+        /// <returns></returns>
         private async Task GetData(List<TranslationModel> models)
         {
+            models.Clear(); // Clear list of TranslationModel
             azureEasyTableClient.BaseAddress = @"http://mobiletranslator.azurewebsites.net/";
             azureEasyTableClient.TargetAPI = @"tables/TranslatedText";
             string data = await azureEasyTableClient.GetDataListAsync();
-            data = "{\"data\":" + data + "}";
+            data = "{\"data\":" + data + "}"; // Adding prefix and postfix to returning data from API
             Newtonsoft.Json.Linq.JObject jobject = Newtonsoft.Json.Linq.JObject.Parse(data);
             if (jobject.HasValues)
             {
@@ -118,8 +139,10 @@ namespace DemoApp
 
         private async void listView_Refreshing(object sender, EventArgs e)
         {
+            IsRefreshing = true;
             await GetData(models);
             ListViewData(models);
+            IsRefreshing = false;  
         }
     }
 }

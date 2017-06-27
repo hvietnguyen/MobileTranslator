@@ -61,7 +61,7 @@ namespace DemoApp.Droid
                 if (audioRecord != null && audioRecord.State == State.Initialized)
                     audioRecord.StartRecording();
 
-                // Strat audio thread to write audio data to temp .raw file
+                // Start audio thread to write audio data to temp .raw file
                 delegateThreadStart = new System.Threading.ThreadStart(AndroidRecorder.WriteAudioDataToTempFile);
                 audioThread = new System.Threading.Thread(delegateThreadStart);
                 audioThread.Start();

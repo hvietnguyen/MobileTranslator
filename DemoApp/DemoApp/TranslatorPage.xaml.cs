@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using DemoApp.Model;
 
 namespace DemoApp
 {
@@ -15,6 +16,7 @@ namespace DemoApp
         IRecorder recorder;
         ISpeechRecognition speechRecognition;
         ITranslation tranlation;
+        IAzureEasyTableClient azureEasyTableClient;
         bool isRecording;
         const string SPEECH_API_KEY = "e9e5578f906f4217b24db8f406d0734b";
         const string GOOGLE_TRANSLATE_API = "AIzaSyAUB0cxDbShIOAqDwdEgGuGQ1jEpUvW0xg";
@@ -25,6 +27,7 @@ namespace DemoApp
             recorder = DependencyService.Get<IRecorder>();
             speechRecognition = DependencyService.Get<ISpeechRecognition>();
             tranlation = DependencyService.Get<ITranslation>();
+            azureEasyTableClient = DependencyService.Get<IAzureEasyTableClient>();
             isRecording = false;
         }
 
@@ -112,6 +115,30 @@ namespace DemoApp
             Play.IsVisible = Play.IsEnabled = !isRecording;
             Stop.IsVisible = Stop.IsEnabled = isRecording;
         }
-       
+
+        /// <summary>
+        /// Save original text and translated text to azure data base service
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void TranslatedText_Tapped(object sender, EventArgs e)
+        {
+            azureEasyTableClient.BaseAddress = @"http://mobiletranslator.azurewebsites.net/";
+            azureEasyTableClient.TargetAPI = @"tables/TranslatedText";
+            TranslationModel model = new TranslationModel()
+            {
+                Text=RecordedText.Text,
+                TranslatedText = TranslatedText.Text,
+                Pronunciation = TranslatedText.Detail
+            };
+            bool result = await azureEasyTableClient.PostDataAsync(model);
+            if(result)
+            {
+                await DisplayAlert("Message", "Save data successful", "OK");
+                RecordedText.Text = String.Empty;
+                TranslatedText.Text = String.Empty;
+                TranslatedText.Detail = String.Empty;
+            }
+        }
     }
 }

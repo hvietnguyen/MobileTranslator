@@ -11,13 +11,17 @@
 namespace DemoApp {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\vietnguyen\\Documents\\MSA\\MSA 2017\\Module 2\\DemoApp\\DemoApp\\DemoApp\\Sente" +
-        "ncesPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\vietnguyen\\Documents\\MSA\\MSA 2017\\Module 2\\MobileTranslator\\DemoApp\\Demo" +
+        "App\\SentencesPage.xaml")]
     public partial class SentencesPage : global::Xamarin.Forms.ContentPage {
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView listView;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(SentencesPage));
+            listView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "listView");
         }
     }
 }

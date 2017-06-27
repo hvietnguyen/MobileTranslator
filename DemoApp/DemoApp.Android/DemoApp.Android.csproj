@@ -149,6 +149,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AndroidAzureEasyTableClient.cs" />
     <Compile Include="AndroidRecorder.cs" />
     <Compile Include="AndroidTranslation.cs" />
     <Compile Include="Authentication.cs" />

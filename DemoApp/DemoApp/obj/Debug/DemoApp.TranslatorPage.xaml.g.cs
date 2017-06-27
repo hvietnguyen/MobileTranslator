@@ -11,12 +11,15 @@
 namespace DemoApp {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\vietnguyen\\Documents\\MSA\\MSA 2017\\Module 2\\DemoApp\\DemoApp\\DemoApp\\Trans" +
-        "latorPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\vietnguyen\\Documents\\MSA\\MSA 2017\\Module 2\\MobileTranslator\\DemoApp\\Demo" +
+        "App\\TranslatorPage.xaml")]
     public partial class TranslatorPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Editor RecordedText;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.TableView Table;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.ImageCell TranslatedText;
@@ -31,6 +34,7 @@ namespace DemoApp {
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(TranslatorPage));
             RecordedText = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Editor>(this, "RecordedText");
+            Table = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.TableView>(this, "Table");
             TranslatedText = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageCell>(this, "TranslatedText");
             Play = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "Play");
             Stop = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "Stop");

@@ -51,9 +51,6 @@ namespace DemoApp.Droid
         {
             DemoApp.Droid.Authentication authentication = new DemoApp.Droid.Authentication(subscription_key);
             Task = System.Threading.Tasks.Task.Factory.StartNew(()=>authentication.Authenticate());
-            //delegateThread = new System.Threading.ThreadStart(authentication.Authenticate);
-            //thread = new System.Threading.Thread(delegateThread);
-            //thread.Start();
 
             if (HttpRequest == null)
             {

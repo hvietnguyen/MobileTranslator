@@ -13,6 +13,6 @@ namespace DemoApp
         string Target { get; set; }
         string StringJsonReponse { get; set; }
         Task Translate();
-        Task<string> CallWatsonPronunciationAPI(string tex);
+        Task<string> CallWatsonPronunciationAPI(string text);
     }
 }

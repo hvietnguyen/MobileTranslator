@@ -1,10 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DemoApp.SentencesPage">
+             xmlns:local="clr-namespace:DemoApp"
+             x:Class="DemoApp.SentencesPage" >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Display sentences were translated" />
-        </StackLayout>
+        <ListView x:Name="listView" SeparatorVisibility="Default" IsPullToRefreshEnabled="True" 
+                  VerticalOptions="FillAndExpand" Refreshing="listView_Refreshing">
+            <!--IsRefreshing="{Binding IsBusy, Mode=OneWay}" RefreshCommand="{Binding RefreshCommand}" 
+                  ItemsSource="{Binding ListTranslationModel}">-->
+            <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                        <ViewCell>
+                            <Label Text="{Binding Text}" HorizontalOptions="FillAndExpand" />
+                        </ViewCell>
+                        <TextCell Text="{Binding TranslatedText}" Detail="{Binding Pronunciation}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.ItemTemplate>-->
+        </ListView>
     </ContentPage.Content>
+    
+    
 </ContentPage>

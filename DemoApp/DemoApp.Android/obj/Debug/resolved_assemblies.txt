@@ -38,6 +38,7 @@ C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\Dem
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Diagnostics.Tools.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Threading.Tasks.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Net.Requests.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Collections.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Diagnostics.Debug.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Linq.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.ComponentModel.dll
@@ -48,7 +49,6 @@ C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\Dem
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Numerics.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Xml.XmlDocument.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Xml.XDocument.dll
-C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Collections.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Globalization.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Runtime.Serialization.dll

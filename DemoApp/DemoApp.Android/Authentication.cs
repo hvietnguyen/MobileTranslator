@@ -32,9 +32,9 @@ namespace DemoApp.Droid
             this.subscriptionKey = subscriptionKey;
         }
 
-        public void Authenticate()
+        public async Task Authenticate()
         {
-            Token =  FetchToken(FetchTokenUri, subscriptionKey).Result;
+            Token = await FetchToken(FetchTokenUri, subscriptionKey);
 
             // renew the token on set duration.
             try

@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 [assembly: Dependency(typeof(DemoApp.Droid.SpeechRecognition))]
 namespace DemoApp.Droid
@@ -19,39 +20,39 @@ namespace DemoApp.Droid
         //static System.Threading.Thread thread = null;
         //static System.Threading.ThreadStart delegateThread = null;
         System.Threading.Tasks.Task task = null;
-        public System.Threading.Tasks.Task Task
-        {
-            get
-            {
-                return task;
-            }
-            set
-            {
-                task = value;
-            }
-        }
+        //public System.Threading.Tasks.Task Task
+        //{
+        //    get
+        //    {
+        //        return task;
+        //    }
+        //    set
+        //    {
+        //        task = value;
+        //    }
+        //}
         public string AudioFile { get; set; }
 
         public System.Net.HttpWebRequest HttpRequest { get; set; }
        
         public string Token { get; }
 
-        private string httpStringResponse;
+        //private string httpStringResponse;
 
-        public string HttpStringResponse
-        {
-            get { return httpStringResponse; }
-        }
+        //public string HttpStringResponse
+        //{
+        //    get { return httpStringResponse; }
+        //}
 
         /// <summary>
         /// Authenticate and get a JSON Web Token (JWT) from the token service.
         /// </summary>
         /// <param name="subscription_key"></param>
-        public void Authenticate(string subscription_key)
+        public async Task Authenticate(string subscription_key)
         {
             DemoApp.Droid.Authentication authentication = new DemoApp.Droid.Authentication(subscription_key);
-            Task = System.Threading.Tasks.Task.Factory.StartNew(()=>authentication.Authenticate());
-
+            //Task = System.Threading.Tasks.Task.Factory.StartNew(()=>authentication.Authenticate());
+            await authentication.Authenticate();
             if (HttpRequest == null)
             {
                 throw new ArgumentException("HttpWebRequest is null!");
@@ -111,8 +112,6 @@ namespace DemoApp.Droid
             {
                 using (System.Net.WebResponse response = HttpRequest.GetResponse())
                 {
-                    Console.WriteLine(((System.Net.HttpWebResponse)response).StatusCode);
-
                     using (System.IO.StreamReader sr = new System.IO.StreamReader(response.GetResponseStream()))
                     {
                         data = sr.ReadToEnd();

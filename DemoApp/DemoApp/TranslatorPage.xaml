@@ -21,9 +21,9 @@
             </TableRoot>
         </TableView>
 
-        <Button x:Name="Play" Margin="5,5,5,5" Image="Play.png" HeightRequest="60" WidthRequest="80" BackgroundColor="White" 
+        <Button x:Name="Play" Margin="5,5,5,5" Image="Play.png" HeightRequest="60" WidthRequest="60" BackgroundColor="White" 
                                 HorizontalOptions="Center" Clicked="Play_Clicked" IsVisible="True" IsEnabled="True" />
-        <Button x:Name="Stop" Margin="5,5,5,5" Image="Stop.png" HeightRequest="60" WidthRequest="80" BackgroundColor="White"  
+        <Button x:Name="Stop" Margin="5,5,5,5" Image="Stop.png" HeightRequest="60" WidthRequest="60" BackgroundColor="White"  
                                 HorizontalOptions="Center" Clicked="Stop_Clicked" IsVisible="false" IsEnabled="false" />
     </StackLayout>
     

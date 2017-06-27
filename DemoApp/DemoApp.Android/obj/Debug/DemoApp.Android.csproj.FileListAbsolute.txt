@@ -136,3 +136,4 @@ C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\Dem
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\res\drawable\loading.gif

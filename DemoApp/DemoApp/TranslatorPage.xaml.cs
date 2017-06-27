@@ -49,7 +49,7 @@ namespace DemoApp
             {
                 if (isRecording)
                 {
-                    SwitchPlayOrStop(isRecording);
+                    SwitchPlayOrStop(isRecording, false);
                     recorder.StartRecording();
                 }
             }
@@ -64,21 +64,22 @@ namespace DemoApp
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Stop_Clicked(object sender, EventArgs e)
+        private async Task Stop_Clicked(object sender, EventArgs e)
         {
             isRecording = false;
             try
             {
                 if (!isRecording)
                 {
-                    SwitchPlayOrStop(isRecording);
+                    SwitchPlayOrStop(isRecording, true);
+                    
                     recorder.StopRecording();
                     // Request Speech REST API
                     speechRecognition.HttpRequest = (System.Net.HttpWebRequest)System.Net.HttpWebRequest.Create(
                      @"https://speech.platform.bing.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US");
                     // Authenticate and get a JSON Web Token (JWT) from the token service.
-                    if (speechRecognition.Task == null || speechRecognition.Task.IsCompleted)
-                        speechRecognition.Authenticate(SPEECH_API_KEY);
+                    //if (speechRecognition.Task == null || speechRecognition.Task.IsCompleted)
+                    await speechRecognition.Authenticate(SPEECH_API_KEY);
                     // Send the request to Bing Speech API REST end point.
                     var displayText = "Could not detect, please try again!";
                     if (String.IsNullOrEmpty(recorder.WavFilePath))
@@ -111,6 +112,7 @@ namespace DemoApp
                         TranslatedText.Detail = json.Value<string>("pronunciation");
                     }
                     RecordedText.Text = displayText.ToString();
+                    SwitchPlayOrStop(isRecording, false);
                 }
             }
             catch (ArgumentException ex)
@@ -123,9 +125,13 @@ namespace DemoApp
         /// Switch bwteen buttons play and stop 
         /// </summary>
         /// <param name="isRecording"></param>
-        private void SwitchPlayOrStop(bool isRecording)
+        /// /// <param name="isLoading"></param>
+        private void SwitchPlayOrStop(bool isRecording, bool isLoading)
         {
-            Play.IsVisible = Play.IsEnabled = !isRecording;
+            Play.IsVisible = !isRecording;
+            Play.IsEnabled = !isLoading;
+            Play.Image = isLoading ? "loading.gif" : "Play.png";
+            Play.HeightRequest = Play.WidthRequest = isLoading ? 40 : 60;
             Stop.IsVisible = Stop.IsEnabled = isRecording;
         }
 

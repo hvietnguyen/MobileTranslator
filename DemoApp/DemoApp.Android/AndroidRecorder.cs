@@ -29,7 +29,7 @@ namespace DemoApp.Droid
 
         protected const int RECORDER_BPP = 16;
         protected const AudioSource AUDIO_SOURCE = AudioSource.Mic;
-        protected const int SAMPLE_RATE = 44100;
+        protected const int SAMPLE_RATE = 11600;
         protected const ChannelIn CHANNEL_INPUT = ChannelIn.Stereo;
         protected const Android.Media.Encoding ENCODING = Android.Media.Encoding.Pcm16bit;
 
@@ -50,7 +50,7 @@ namespace DemoApp.Droid
             try
             {
                 // Start recorder
-                bufferSize = AudioRecord.GetMinBufferSize(8000, ChannelIn.Mono, ENCODING);
+                bufferSize = AudioRecord.GetMinBufferSize(11600, ChannelIn.Mono, ENCODING);
                 audioRecord = new AudioRecord(AUDIO_SOURCE, SAMPLE_RATE, CHANNEL_INPUT, ENCODING, bufferSize);
 
                 if (audioRecord == null)
@@ -97,6 +97,7 @@ namespace DemoApp.Droid
                     audioRecord = null;
                     // Stop thread
                     audioThread.Abort();
+                    delegateThreadStart = null;
                     audioThread = null;
                 }
 
@@ -124,7 +125,7 @@ namespace DemoApp.Droid
             {
                 // Create temp .raw file
                 rawFile = Android.OS.Environment.ExternalStorageDirectory.Path+"/TempAudioRecorderFile.raw";
-                using (System.IO.Stream fileSream = System.IO.File.Open(rawFile, FileMode.OpenOrCreate))
+                using (System.IO.Stream fileSream = System.IO.File.Open(rawFile, FileMode.Create))
                 {
                     using (BinaryWriter binaryWriter = new BinaryWriter(fileSream))
                     {

@@ -29,9 +29,11 @@ namespace DemoApp.Droid
 
         protected const int RECORDER_BPP = 16;
         protected const AudioSource AUDIO_SOURCE = AudioSource.Mic;
-        protected const int SAMPLE_RATE = 44100;
+        //protected const int SAMPLE_RATE = 11025;
         protected const ChannelIn CHANNEL_INPUT = ChannelIn.Stereo;
         protected const Android.Media.Encoding ENCODING = Android.Media.Encoding.Pcm16bit;
+
+        int sample_rate = 0;
 
         public string WavFilePath
         {
@@ -40,6 +42,15 @@ namespace DemoApp.Droid
 
         public AndroidRecorder()
         {
+            foreach (int rate in new int[] { 8000, 11025, 16000, 22050, 44100 })
+            {
+                bufferSize = AudioRecord.GetMinBufferSize(rate, ChannelIn.Mono, ENCODING);
+                if(bufferSize > 0)
+                {
+                    sample_rate = rate;
+                    break;
+                }
+            }
         }
         /// <summary>
         /// Start recorder
@@ -49,9 +60,10 @@ namespace DemoApp.Droid
             isRecording = true;
             try
             {
+                // Get invalid bufferSize
+                
                 // Start recorder
-                bufferSize = AudioRecord.GetMinBufferSize(44100, ChannelIn.Mono, ENCODING);
-                audioRecord = new AudioRecord(AUDIO_SOURCE, SAMPLE_RATE, CHANNEL_INPUT, ENCODING, bufferSize);
+                audioRecord = new AudioRecord(AUDIO_SOURCE, sample_rate, CHANNEL_INPUT, ENCODING, bufferSize);
 
                 if (audioRecord == null)
                 {
@@ -168,9 +180,9 @@ namespace DemoApp.Droid
         {
             long totalAudioLen = 0;
             long totalDatalen = 0;
-            long longSampleRate = SAMPLE_RATE;
+            long longSampleRate = sample_rate;
             int channels = 2;
-            long byteRate = RECORDER_BPP * SAMPLE_RATE * channels / 8;
+            long byteRate = RECORDER_BPP * sample_rate * channels / 8;
 
             byte[] data = new byte[bufferSize];
             try

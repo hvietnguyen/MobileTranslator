@@ -24,13 +24,21 @@ namespace DemoApp
         public TranslatorPage()
         {
             InitializeComponent();
+            // Dependency Injection - reference to classes in Android module
             recorder = DependencyService.Get<IRecorder>();
             speechRecognition = DependencyService.Get<ISpeechRecognition>();
             tranlation = DependencyService.Get<ITranslation>();
             azureEasyTableClient = DependencyService.Get<IAzureEasyTableClient>();
+
             isRecording = false;
         }
 
+        /// <summary>
+        /// click event of play button.
+        /// Recording the voice from speaker by Mobile Mic
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Play_Clicked(object sender, EventArgs e)
         {
             isRecording = true;
@@ -51,6 +59,11 @@ namespace DemoApp
             }
         }
 
+        /// <summary>
+        /// Click event of stop button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void Stop_Clicked(object sender, EventArgs e)
         {
             isRecording = false;

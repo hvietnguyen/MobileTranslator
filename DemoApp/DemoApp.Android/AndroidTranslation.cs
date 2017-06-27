@@ -63,14 +63,16 @@ namespace DemoApp.Droid
         public string StringJsonReponse { get; set; }
         #endregion
 
-        
-        
         public async Task Translate()
         {
             await CallGoogleTranslateAPI();
            
         }
 
+        /// <summary>
+        /// Call Google translation API and set response string data to StringJsonResponse property
+        /// </summary>
+        /// <returns></returns>
         private async Task CallGoogleTranslateAPI()
         {
             if(String.IsNullOrEmpty(Key)|| String.IsNullOrEmpty(Text)|| String.IsNullOrEmpty(Target))
@@ -89,6 +91,11 @@ namespace DemoApp.Droid
             }
         }
 
+        /// <summary>
+        /// Call Watson Pronunciation API
+        /// </summary>
+        /// <param name="text">string text need to be pronuonced</param>
+        /// <returns>string json</returns>
         public async Task<string> CallWatsonPronunciationAPI(string text)
         {
             string value = String.Empty;

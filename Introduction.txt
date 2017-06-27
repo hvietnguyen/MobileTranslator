@@ -1,0 +1,7 @@
+This video will demonstrate the Xamarin app demo for MSA Winter of Xamarin app competition. The idea of app is for learning a new language, practise pronunciation and helping for traveler to translate the original language to local language as needed by mobile.
+The app will record the voice of user after he/she press play button. When user finishes recording he/she press a stop button, the app will starting to send the audio voice to speech API MS Azure for detecting text according to speaking and then use Google API translate to targeting language.
+User can also save the text and translated text to database hosted in Azure service.
+In this version, the app only support for English to Japanese. No stream recording and translation (the idea is for next future development).
+
+Youtube: https://youtu.be/BXwRbhfXJY4
+

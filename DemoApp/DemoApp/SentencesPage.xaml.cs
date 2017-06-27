@@ -17,6 +17,10 @@ namespace DemoApp
         IAzureEasyTableClient azureEasyTableClient = null;
         List<TranslationModel> models = null;
 
+        /// <summary>
+        /// Property use to binding to IsRefreshing property of listview to turn off the
+        /// refreshing icon when loading data completed.
+        /// </summary>
         bool isRefreshing = false;
         public bool IsRefreshing
         {
@@ -50,8 +54,10 @@ namespace DemoApp
             }
 
             listView.ItemsSource = models;
+
             dataTemplate = new DataTemplate(() =>
             {
+                // Create label components and binding data to them 
                 Label recordedText = new Label();
                 recordedText.FontSize = 14;
                 recordedText.FontFamily = "Sans-Serif";
@@ -67,8 +73,7 @@ namespace DemoApp
                 pronunciation.TextColor = Color.LightGray;
                 pronunciation.SetBinding(Label.TextProperty, "Pronunciation");
 
-
-
+                // A ViewCell is wrapping layouts and components
                 return new ViewCell
                 {
                     View = new StackLayout
@@ -94,7 +99,9 @@ namespace DemoApp
                 };
             });
 
+            // Set dataTemplate to ItemTemplate property of listview
             listView.ItemTemplate = dataTemplate;
+
             this.Content = new StackLayout
             {
                 Children =
@@ -112,13 +119,17 @@ namespace DemoApp
         private async Task GetData(List<TranslationModel> models)
         {
             models.Clear(); // Clear list of TranslationModel
+            // Call Azure service to get data from Easy Table
             azureEasyTableClient.BaseAddress = @"http://mobiletranslator.azurewebsites.net/";
             azureEasyTableClient.TargetAPI = @"tables/TranslatedText";
             string data = await azureEasyTableClient.GetDataListAsync();
+
             data = "{\"data\":" + data + "}"; // Adding prefix and postfix to returning data from API
+
             Newtonsoft.Json.Linq.JObject jobject = Newtonsoft.Json.Linq.JObject.Parse(data);
             if (jobject.HasValues)
             {
+                // Geting data from JObject and adding to TranslationModel List 
                 var elements = (from j in jobject["data"] select j).GetEnumerator();
                 while (elements.MoveNext())
                 {
@@ -137,6 +148,11 @@ namespace DemoApp
             }
         }
 
+        /// <summary>
+        /// Refreshing event of list view.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void listView_Refreshing(object sender, EventArgs e)
         {
             IsRefreshing = true;

@@ -65,9 +65,6 @@ namespace DemoApp.Droid
                 delegateThreadStart = new System.Threading.ThreadStart(AndroidRecorder.WriteAudioDataToTempFile);
                 audioThread = new System.Threading.Thread(delegateThreadStart);
                 audioThread.Start();
-
-                //Java.Lang.Thread recordingThread = new Java.Lang.Thread(new Java.Lang.Runnable(() => WriteAudioDataToFile()));
-                //recordingThread.Start();
             }
             catch(OutOfMemoryException ex)
             {
@@ -118,7 +115,7 @@ namespace DemoApp.Droid
 
         #region Private Functions
         /// <summary>
-        /// 
+        /// Read data from audio stream to temp file
         /// </summary>
         protected static void WriteAudioDataToTempFile()
         {
@@ -162,7 +159,7 @@ namespace DemoApp.Droid
         }
 
         /// <summary>
-        /// 
+        /// Create a .wav file, then write 44 bytes wav file header and data from temp file to the .wav file
         /// </summary>
         /// <param name="rawFilePath"></param>
         /// <param name="wavFilePath"></param>
@@ -213,7 +210,7 @@ namespace DemoApp.Droid
         }
 
         /// <summary>
-        /// 
+        /// Write .wav file header
         /// </summary>
         /// <param name="wavStream"></param>
         /// <param name="bWriter"></param>

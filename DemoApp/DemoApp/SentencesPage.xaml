@@ -5,7 +5,7 @@
              x:Class="DemoApp.SentencesPage" >
     <ContentPage.Content>
         <ListView x:Name="listView" SeparatorVisibility="Default" IsPullToRefreshEnabled="True" 
-                  VerticalOptions="FillAndExpand" Refreshing="listView_Refreshing">
+                  VerticalOptions="FillAndExpand" Refreshing="listView_Refreshing" ItemSelected="listView_ItemSelected" ItemTapped="listView_ItemTapped">
             <!--IsRefreshing="{Binding IsBusy, Mode=OneWay}" RefreshCommand="{Binding RefreshCommand}" 
                   ItemsSource="{Binding ListTranslationModel}">-->
             <!--<ListView.ItemTemplate>

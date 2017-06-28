@@ -142,6 +142,10 @@ namespace DemoApp
         /// <param name="e"></param>
         private async void TranslatedText_Tapped(object sender, EventArgs e)
         {
+            bool answer = await DisplayAlert("Confirm","Do you want to save?","Yes","No");
+            if (!answer)
+                return;
+
             if(String.IsNullOrEmpty(RecordedText.Text) || String.IsNullOrEmpty(TranslatedText.Text) 
                 || String.IsNullOrEmpty(TranslatedText.Detail))
             {
@@ -161,7 +165,7 @@ namespace DemoApp
 
             if(result)
             {
-                await DisplayAlert("Message", "Save data successful", "OK");
+                await DisplayAlert("Saving", "Save data successful", "OK");
                 RecordedText.Text = String.Empty;
                 TranslatedText.Text = String.Empty;
                 TranslatedText.Detail = String.Empty;

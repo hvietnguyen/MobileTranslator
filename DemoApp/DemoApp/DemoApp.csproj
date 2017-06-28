@@ -46,6 +46,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\TranslationModel.cs" />
+    <Compile Include="Model\TranslationModelView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SentencesPage.xaml.cs">
       <DependentUpon>SentencesPage.xaml</DependentUpon>

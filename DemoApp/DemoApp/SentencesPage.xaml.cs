@@ -15,8 +15,8 @@ namespace DemoApp
     public partial class SentencesPage : ContentPage
     {
         IAzureEasyTableClient azureEasyTableClient = null;
-        List<TranslationModel> models = null;
-
+        List<TranslationModelView> models = null;
+        Label id = null;
         /// <summary>
         /// Property use to binding to IsRefreshing property of listview to turn off the
         /// refreshing icon when loading data completed.
@@ -39,12 +39,12 @@ namespace DemoApp
             InitializeComponent();
             azureEasyTableClient = DependencyService.Get<IAzureEasyTableClient>();
             listView.SetBinding(ListView.IsRefreshingProperty, "IsRefreshing");
-            models = new List<TranslationModel>();
+            models = new List<TranslationModelView>();
             //var translationViewListModel = new TranslationViewList();
             //BindingContext = translationViewListModel;
         }
 
-        private void ListViewData(List<TranslationModel> models)
+        private void ListViewData(List<TranslationModelView> models)
         {
             DataTemplate dataTemplate = null;
             if (models == null || models.Count <= 0)
@@ -58,6 +58,10 @@ namespace DemoApp
             dataTemplate = new DataTemplate(() =>
             {
                 // Create label components and binding data to them 
+                id = new Label();
+                id.IsVisible = false;
+                id.SetBinding(Label.TextProperty, "ID");
+
                 Label recordedText = new Label();
                 recordedText.FontSize = 14;
                 recordedText.FontFamily = "Sans-Serif";
@@ -83,6 +87,7 @@ namespace DemoApp
                         Spacing = 1,
                         Children =
                         {
+                            id,
                             recordedText,
                             new StackLayout
                             {
@@ -116,7 +121,7 @@ namespace DemoApp
         /// </summary>
         /// <param name="models">List of TranslationModel to hold data</param>
         /// <returns></returns>
-        private async Task GetData(List<TranslationModel> models)
+        private async Task GetData(List<TranslationModelView> models)
         {
             models.Clear(); // Clear list of TranslationModel
             // Call Azure service to get data from Easy Table
@@ -133,11 +138,13 @@ namespace DemoApp
                 var elements = (from j in jobject["data"] select j).GetEnumerator();
                 while (elements.MoveNext())
                 {
+                    var id = elements.Current.Value<string>("id");
                     var text = elements.Current.Value<string>("Text");
                     var translatedText = elements.Current.Value<string>("TransltedText");
                     var pronunciation = elements.Current.Value<string>("Pronunciation");
-                    TranslationModel model = new TranslationModel()
+                    TranslationModelView model = new TranslationModelView()
                     {
+                        ID = id,
                         Text = text,
                         TranslatedText = translatedText,
                         Pronunciation = pronunciation
@@ -159,6 +166,42 @@ namespace DemoApp
             await GetData(models);
             ListViewData(models);
             IsRefreshing = false;  
+        }
+
+        private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            //((ListView)sender).SelectedItem = null;
+        }
+
+        private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            try
+            {
+                var action = await DisplayActionSheet("Menus", "Cancel", null, "Delete");
+                
+                if (action.Equals("Delete", StringComparison.OrdinalIgnoreCase))
+                {
+                    bool result = await azureEasyTableClient.DeleteDataAsync(id.Text);
+                    if (result)
+                    {
+                        IsRefreshing = true;
+                        await GetData(models);
+                        ListViewData(models);
+                        IsRefreshing = false;
+
+                        await DisplayAlert("Message", "Delete item successfully!", "Ok");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Alert", "Delete item fail!", "Ok");
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "Ok");
+            }
+            
         }
     }
 }

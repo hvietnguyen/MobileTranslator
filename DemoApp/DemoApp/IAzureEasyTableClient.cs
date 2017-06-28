@@ -15,6 +15,6 @@ namespace DemoApp
         Task<string> GetDataListAsync();
         Task<bool> PostDataAsync(TranslationModel model);
         Task PutDataAsync(TranslationModel model);
-        Task<bool> DeleteDataAsync(TranslationModel model);
+        Task<bool> DeleteDataAsync(string id);
     }
 }

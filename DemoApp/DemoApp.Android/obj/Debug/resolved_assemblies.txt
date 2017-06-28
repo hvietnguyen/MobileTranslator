@@ -1,12 +1,20 @@
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\DemoApp.Android.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\DemoApp.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\FormsViewGroup.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Microsoft.Azure.Mobile.Client.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Newtonsoft.Json.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\PCLCrypto.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\PInvoke.BCrypt.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\PInvoke.Kernel32.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\PInvoke.NCrypt.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\PInvoke.Windows.Core.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Validation.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Android.Support.Animated.Vector.Drawable.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Android.Support.Annotations.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Android.Support.Compat.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Android.Support.Core.UI.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Android.Support.Core.Utils.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Android.Support.CustomTabs.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Android.Support.Design.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Android.Support.Fragment.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Xamarin.Android.Support.Media.Compat.dll
@@ -44,6 +52,8 @@ C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\Dem
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.ComponentModel.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Xml.ReaderWriter.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Reflection.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Runtime.Serialization.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.ServiceModel.Internals.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.IO.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Runtime.Numerics.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Numerics.dll
@@ -51,8 +61,6 @@ C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\Dem
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Xml.XDocument.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Globalization.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll
-C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Runtime.Serialization.dll
-C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.ServiceModel.Internals.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.ComponentModel.TypeConverter.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Dynamic.Runtime.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Linq.Expressions.dll
@@ -65,7 +73,7 @@ C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\Dem
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Reflection.Extensions.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Reflection.Primitives.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Text.Encoding.Extensions.dll
-C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Collections.Concurrent.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Runtime.InteropServices.dll
+C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\System.Collections.Concurrent.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Mono.CSharp.dll
 C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\android\assets\Mono.Security.dll

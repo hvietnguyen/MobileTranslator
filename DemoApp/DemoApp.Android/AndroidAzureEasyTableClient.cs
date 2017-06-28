@@ -13,6 +13,7 @@ using Android.Views;
 using Android.Widget;
 using Xamarin.Forms;
 using DemoApp.Model;
+using Microsoft.WindowsAzure.MobileServices;
 
 [assembly:Dependency(typeof(DemoApp.Droid.AndroidAzureEasyTableClient))]
 namespace DemoApp.Droid
@@ -21,6 +22,9 @@ namespace DemoApp.Droid
     {
         HttpClient client = null;
         HttpResponseMessage reponse = null;
+        HttpRequestMessage requestMessage = null;
+        MobileServiceClient mobileServiceCLient = null;
+        IMobileServiceTable translatedTextTable = null;
         public string BaseAddress { get; set; }
 
         public string StringResponse
@@ -30,18 +34,41 @@ namespace DemoApp.Droid
 
         public string TargetAPI { get; set; }
 
-
-        public async Task<bool> DeleteDataAsync(TranslationModel model)
+        public AndroidAzureEasyTableClient()
         {
-            throw new NotImplementedException();
+            client = new HttpClient();
+            mobileServiceCLient = new MobileServiceClient(@"http://mobiletranslator.azurewebsites.net");
+            translatedTextTable = mobileServiceCLient.GetTable("TranslatedText");
+        }
+
+        public async Task<bool> DeleteDataAsync(string id)
+        {
+            if (translatedTextTable == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                Newtonsoft.Json.Linq.JObject jo = new Newtonsoft.Json.Linq.JObject();
+                jo.Add("id", id);
+                await translatedTextTable.DeleteAsync(jo);
+                return true;
+            }
+            catch(MobileServiceConflictException ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+            
         }
 
         public async Task<string> GetDataListAsync()
         {
             string data = String.Empty;
-            client = new HttpClient();
-            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, new Uri(BaseAddress + TargetAPI));
+            //client = new HttpClient();
+            requestMessage = new HttpRequestMessage(HttpMethod.Get, new Uri(BaseAddress + TargetAPI));
             requestMessage.Headers.Add("ZUMO-API-VERSION", "2.0.0");
+            
             this.reponse = await client.SendAsync(requestMessage);
             if (reponse.IsSuccessStatusCode)
             {
@@ -57,9 +84,8 @@ namespace DemoApp.Droid
                 return false;
             }
 
-            client = new HttpClient();
+            //client = new HttpClient();
             HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Post, new Uri(BaseAddress + TargetAPI));
-            //requestMessage.Headers.Add(("Content-Type","application/json");
             requestMessage.Headers.Add("ZUMO-API-VERSION", "2.0.0");
 
             string data = "{" + $"\"Text\":\"{model.Text}\", "+

@@ -2,6 +2,8 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\__library_projects__\Microsoft.Azure.Mobile.Client\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\__library_projects__\PCLCrypto\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.Design\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.Transition\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.AppCompat\library_project_imports\res</ResolvedResourceDirectory>
@@ -12,11 +14,15 @@
     <ResolvedResourceDirectory>C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\Microsoft.Azure.Mobile.Client\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\PCLCrypto\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\__library_projects__\Microsoft.Azure.Mobile.Client.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\__library_projects__\PCLCrypto.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.Design.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.Transition.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\vietnguyen\Documents\MSA\MSA 2017\Module 2\MobileTranslator\DemoApp\DemoApp.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.AppCompat.stamp</ResolvedResourceDirectoryStamp>
